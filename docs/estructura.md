@@ -259,3 +259,6 @@ En particular:
 * `watched.csv` se centra en las películas marcadas como vistas.
 * `reviews.csv` se centra en las reseñas escritas.
 
+Documentación importante:
+
+ https://letterboxd.com/about/importing-data/ 

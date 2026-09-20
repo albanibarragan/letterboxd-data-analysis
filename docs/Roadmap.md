@@ -92,6 +92,7 @@ Aprender a:
 - Ordenar datos.
 - Contar valores.
 - Revisar valores faltantes.
+
 ## Transformaciones aplicadas
 
 - Convertir `Date` de texto a fecha real con `pd.to_datetime()`.
@@ -111,6 +112,7 @@ Cada transformación es reproducible: ejecutar el notebook de nuevo sobre el mis
 |¿Las fechas son válidas?
 |¿La cantidad de registros tiene sentido?
 |¿Coincide con una revisión manual?
+
 ##  Fase 8 —  Analizar datos
 
 Responder estas preguntas:
@@ -119,8 +121,9 @@ Responder estas preguntas:
 2. ¿Cuál es mi rating promedio?
 3. ¿Qué rating utilizo más?
 4. ¿Cuántas películas he visto por año?
-5. ¿Cuáles son mis 10 películas mejor calificadas?
+5. ¿Cuáles son mis películas mejor calificadas?
 6. ¿Datos sensibles que me dan en los csv?
+
 ## Fase 9 — Crear las métricas
 
 | Métrica                                 | Valor |
