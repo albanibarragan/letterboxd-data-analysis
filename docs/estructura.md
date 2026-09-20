@@ -233,17 +233,40 @@ Los cuatro datasets representan diferentes actividades dentro del historial de L
 
 ## Relación conceptual entre los datasets
 
-Los datasets no representan exactamente lo mismo. Cada uno describe una actividad diferente:
+Los datasets no representan exactamente lo mismo. Cada uno describe una actividad diferente y, además, el formato oficial de importación de Letterboxd está basado en un CSV con columnas específicas que pueden aparecer en cualquier orden:
+
+- `LetterboxdURIString`
+- `tmdbIDNumber`
+- `imdbIDString`
+- `TitleString`
+- `YearYYYY`
+- `DirectorsString`
+- `RatingNumber`
+- `Rating10Number`
+- `WatchedDateYYYY-MM-DD`
+- `RewatchBoolean`
+- `TagsString`
+- `ReviewText/HTML`
+
+Estas columnas permiten generar varios tipos de registros: calificaciones, entradas del diario, rewatch y reseñas. Por eso, aunque exportemos archivos distintos, la lógica de origen es la misma: Letterboxd genera registros a partir de un CSV de importación con distintos campos opcionales.
 
 ```mermaid
 flowchart TD
-    A[Letterboxd]
+    A[Letterboxd import format] --> B[CSV con columnas opcionales]
+    B --> C[Ratings]
+    B --> D[Diary entries]
+    B --> E[Watched history]
+    B --> F[Reviews]
 
-    A --> B[Watched<br/>Películas vistas]
-    A --> C[Diary<br/>Eventos de visualización]
-    A --> D[Ratings<br/>Películas calificadas]
+    C --> G[RatingNumber / Rating10Number]
+    D --> H[WatchedDate + Rewatch + Tags]
+    E --> I[Marcado como vista]
+    F --> J[ReviewText / HTML]
 
-    C --> E[Reviews<br/>Reseñas escritas]
+    C --> K[Una valoración por película]
+    D --> L[Un evento de visualización]
+    E --> M[Un registro de película vista]
+    F --> N[Una reseña escrita]
 ```
 
 Por esta razón, antes de combinar los datasets será necesario identificar las **claves o identificadores comunes**, especialmente `Letterboxd URI`, `Name` y `Year`, y determinar qué relaciones existen realmente entre ellos.
@@ -259,6 +282,8 @@ En particular:
 * `watched.csv` se centra en las películas marcadas como vistas.
 * `reviews.csv` se centra en las reseñas escritas.
 
+Además, el formato oficial de importación de Letterboxd confirma que estos CSV no son aleatorios: se basan en columnas normalizadas que permiten crear distintos tipos de registros a partir del mismo patrón estructural. Esto explica por qué el mismo contenido puede representarse de formas ligeramente distintas según el tipo de actividad que se está registrando.
+
 Documentación importante:
 
- https://letterboxd.com/about/importing-data/ 
+https://letterboxd.com/about/importing-data/
