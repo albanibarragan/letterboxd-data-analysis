@@ -34,12 +34,24 @@ Realizar un análisis exploratorio de mis datos de Letterboxd para responder pre
 ## Estructura del proyecto
 
 ```text
-.
+letterboxd-data-analysis/
+├── data/
+│   ├── ratings.csv
+│   ├── diary.csv
+│   ├── watched.csv
+│   └── ...
+├── analysis.py
+├── visualizations/
+│   ├── ratings_distribution.png
+│   ├── activity_by_year.png
+│   └── top_movies.png
 ├── README.md
-├── docs/
-│   ├── contexto.md
-│   └── questions.md
-└── (futuras carpetas de datos, notebooks y scripts)
+├── .gitignore
+└── docs/
+    ├── contexto.md
+    ├── questions.md
+    ├── estructura.md
+    └── Roadmap.md
 ```
 
 ## Requisitos

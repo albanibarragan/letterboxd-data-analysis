@@ -142,7 +142,7 @@ Crear solamente 3 gráficos:
 
 -  1. Películas por año: Mostrar cuántas películas he visto/calificado cada año.
 -  2. Distribución de ratings: Mostrar cuántas películas tienen cada rating.
-- 3. Top 10 películas: Mostrar mis 10 películas con mayor calificación.
+- 3. Top películas: Mostrar mis películas con mayor calificación.
 
 ## Fase 11 — Comunicar los resultados
 
