@@ -2,6 +2,7 @@
 data/
 processed/
 visualizations/
+docs/match.md
 
 # Entorno y cachés de Python
 .venv/
