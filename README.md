@@ -70,11 +70,22 @@ pip install pandas matplotlib seaborn jupyter
 
 ## Uso
 
-1. Preparar los datos exportados de Letterboxd.
-2. Cargar los archivos en un script o notebook de Python.
-3. Realizar limpieza y transformación de los datos.
-4. Generar métricas y visualizaciones.
-5. Interpretar los resultados para responder las preguntas del análisis.
+1. Copiar `.env.example` como `.env` y completar `TMDB_ACCESS_TOKEN`.
+2. Colocar los CSV originales de Letterboxd en `data/`.
+3. Ejecutar `python main.py` para generar el dataset enriquecido.
+4. Ejecutar `python -m analysis` para generar métricas y visualizaciones.
+
+## Estructura de ejecución
+
+- `main.py`: entrada mínima del pipeline de enriquecimiento.
+- `src/letterboxd_analysis/config.py`: configuración y rutas.
+- `src/letterboxd_analysis/tmdb.py`: API, matching y metadatos de TMDB.
+- `src/letterboxd_analysis/enrichment.py`: combinación de Letterboxd y TMDB.
+- `src/letterboxd_analysis/pipeline.py`: orquestación de la exportación.
+- `analysis/`: análisis exploratorio y generación explícita de gráficos.
+
+Los directorios `processed/` y `visualizations/` se generan localmente y no
+se versionan. El caché de TMDB permanece en `data/` junto a los datos locales.
 
 ## Nota
 

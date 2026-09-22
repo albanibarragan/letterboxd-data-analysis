@@ -1,5 +1,7 @@
 # Datos personales y exportaciones locales
 data/
+processed/
+visualizations/
 
 # Entorno y cachés de Python
 .venv/
